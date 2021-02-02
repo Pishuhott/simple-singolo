@@ -1,39 +1,39 @@
 .slider {
     background-color: $color-primary;
     border-bottom: 6px solid  #EA676B;
-    & .swiper-container {
+    .swiper-container {
         max-width: 1020px;
         height: 594px;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-        & .swiper-elements { 
+        .swiper-elements { 
             width: 100%;
             max-height: 600px;
             position: relative;
             top: 0;
             left: 0;
-            & .slide {
+            .slide {
                 position: absolute;
                 top: 0;
             }
-            & .slide:nth-child(1) {
+            .slide:nth-child(1) {
                 left: 0;
             }
-            & .slide:nth-child(2) {
+            .slide:nth-child(2) {
                 left: 100%;
             }
-            & .slide:nth-child(3) {
+            .slide:nth-child(3) {
                 left: 200%;
             }
-            & .slide:nth-child(4) {
+            .slide:nth-child(4) {
                 left: 300%;
             }
             & img {
                 max-width: 100%;
             }
         }
-        & .swiper-button {
+        .swiper-button {
             display: flex;
             justify-content: space-between;
             width: 92%;
@@ -41,7 +41,7 @@
             position: absolute;
             top: 47.8%;
             left: 4.4%;
-            & .btn {
+            .btn {
                 cursor: pointer;
                 width: 16px;
                 height: 27px;

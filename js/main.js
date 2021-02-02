@@ -145,6 +145,3 @@ function shuffle(array) {
     new Slider();
 
 })();
-
-
-

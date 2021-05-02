@@ -1,56 +1,62 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function () {
     //=====SCROLL=====
-    window.addEventListener('scroll', () => {
-        let scrollPos = window.scrollY;
+    let anchors = document.querySelectorAll('a[href*="#"]');
+    let headerHeight = document.querySelector('.header').clientHeight;
 
-        document.querySelectorAll('.header, .services, .portfolio').forEach((el, i) => {
-            if (el.offsetTop - document.querySelector('.header').clientHeight <= scrollPos) {
-                document.querySelectorAll('.navigation a').forEach((el) => {
-                    if (el.classList.contains('navigation__link-active')) {
-                        el.classList.remove('navigation__link-active');
-                    }
-                });
-                document.querySelectorAll('.navigation li')[i].querySelector('a').classList.add('navigation__link-active');
-            }
-        });
-    });
-
-    const anchors = document.querySelectorAll('a[href*="#"]')
+    let scrollTo = function (elem) {
+        window.scroll({
+            left: 0,
+            top: elem.offsetTop - headerHeight,
+            behavior: 'smooth'
+        })
+    }
 
     for (let anchor of anchors) {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault()
-            const blockID = anchor.getAttribute('href').substr(1);
+        anchor.addEventListener('click', (e) => {
+            e.preventDefault();
 
-            document.getElementById(blockID).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            let blockID = e.target.getAttribute('href').substr(1);
+            let navSetion = document.getElementById(blockID);
+
+            scrollTo(navSetion);
+
+            document.querySelector('.burger').classList.remove('burger-active');
         });
+
     };
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                document.querySelectorAll('.navigation__link').forEach((link) => {
+                    link.classList.toggle('navigation__link-active', 
+                        link.getAttribute('href').substr(1) === entry.target.id);
+                });
+            }
+        });
+    }, {
+        threshold: 0.7
+    });
 
+    document.querySelectorAll('.navigation-section').forEach((section) => {
+        observer.observe(section)
+    });
+  
     //====BURGER-MENU====
-
     (function () {
         const burgerMenu = document.querySelector('.burger');
-        const burgerBtn = document.querySelector('.burger__button');
-        const overley = burgerMenu.querySelector('.burger-menu__overley');
-        burgerBtn.addEventListener('click', () => {
+
+        document.querySelector('.burger__button').addEventListener('click', () => {
             burgerMenu.classList.toggle('burger-active');
         });
 
-        overley.addEventListener('click', () => {
-            burgerMenu.classList.toggle('burger-active');
+        document.querySelector('.burger-menu__overley').addEventListener('click', () => {
+            burgerMenu.classList.remove('burger-active');
         });
 
     }());
 
-
-
-
     //=====TABS=====
-
     const portfolioTabs = document.querySelectorAll('.portfolio-tablist__tab');
 
     portfolioTabs.forEach(function (item) {
@@ -81,15 +87,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         array.sort(() => Math.random() - 0.5);
     };
 
-
     //=====Slider======
-
     (function () {
-
-        var doc = document,
-            index = 1;
-
-        var Slider = function () {
+        let doc = document;
+        let index = 1;
+        let Slider = function () {
             this.box = doc.querySelector('.swiper-container');
             this.slidesBox = doc.querySelector('.swiper-elements');
             this.slides = doc.querySelectorAll('.slide');
@@ -102,12 +104,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         };
 
         Slider.prototype.position = function () {
-            var size = this.size;
+            let size = this.size;
             this.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px)';
         };
 
         Slider.prototype.carousel = function () {
-            var i, max = this.btns.length,
+            let i, max = this.btns.length,
                 that = this;
 
             for (i = 0; i < max; i += 1) {
@@ -117,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         Slider.prev = function (box) {
             box.slidesBox.style.transition = "transform .3s ease-in-out";
-            var size = box.size;
+            let size = box.size;
             index <= 0 ? false : index--;
             box.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px)';
             box.jump();
@@ -125,16 +127,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         Slider.next = function (box) {
             box.slidesBox.style.transition = "transform .3s ease-in-out";
-            var max = box.slides.length;
-            var size = box.size;
+            let max = box.slides.length;
+            let size = box.size;
             index >= max - 1 ? false : index++;
             box.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px)';
             box.jump();
         };
 
         Slider.prototype.jump = function () {
-            var that = this;
-            var size = this.size;
+            let that = this;
+            let size = this.size;
             this.slidesBox.addEventListener('transitionend', function () {
                 that.slides[index].id === "firstClone" ? index = 1 : index;
                 that.slides[index].id === "lastClone" ? index = that.slides.length - 2 : index;
@@ -142,9 +144,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 that.slidesBox.style.transform = 'translateX(' + (-index * size) + 'px)';
             });
         }
-
         new Slider();
-
     })();
 
 });

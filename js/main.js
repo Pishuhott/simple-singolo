@@ -146,5 +146,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         new Slider();
     })();
-
 });

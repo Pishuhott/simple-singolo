@@ -113,30 +113,16 @@ ul.navigation li {
   overflow: hidden;
 }
 .slider .swiper-container .swiper-elements {
-  width: 100%;
-  max-height: 600px;
   position: relative;
   top: 0;
   left: 0;
 }
 .slider .swiper-container .swiper-elements .slide {
   position: absolute;
-  top: 0;
-}
-.slider .swiper-container .swiper-elements .slide:nth-child(1) {
   left: 0;
-}
-.slider .swiper-container .swiper-elements .slide:nth-child(2) {
-  left: 100%;
-}
-.slider .swiper-container .swiper-elements .slide:nth-child(3) {
-  left: 200%;
-}
-.slider .swiper-container .swiper-elements .slide:nth-child(4) {
-  left: 300%;
-}
-.slider .swiper-container .swiper-elements img {
-  max-width: 100%;
+  top: 0;
+  max-height: 600px;
+  transition: all 0.5s linear;
 }
 .slider .swiper-container .swiper-button {
   display: flex;
@@ -153,6 +139,9 @@ ul.navigation li {
   height: 27px;
   background-position: 0 0;
   background-size: cover;
+}
+.slider .swiper-container .swiper-button .btn img:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .burger {
@@ -267,15 +256,25 @@ a.navigation__link-active {
   padding-top: 60px;
   margin: 0 40px;
 }
+.services .wrapper .our-services h2 {
+  max-width: 940px;
+  max-vheight: 40px;
+  overflow: hidden;
+}
+.services .wrapper .our-services p {
+  max-width: 940px;
+  max-height: 60px;
+  margin-top: 17px;
+}
 .services .wrapper p {
-  margin-top: 18px;
+  overflow: hidden;
 }
 .services .wrapper .services-content {
   margin: 47px 40px 0 40px;
   padding-bottom: 56px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 29px 20px;
+  grid-gap: 30px 20px;
 }
 .services .wrapper .services-content .service-info {
   display: grid;
@@ -283,6 +282,8 @@ a.navigation__link-active {
   grid-gap: 8px;
 }
 .services .wrapper .services-content .service-info p {
+  max-width: 220px;
+  max-height: 77px;
   margin-top: 10px;
   font-style: normal;
   font-weight: normal;
@@ -301,19 +302,27 @@ a.navigation__link-active {
   padding-top: 59px;
   margin: 0 40px;
 }
+.portfolio h2 {
+  max-width: 940px;
+  max-height: 46px;
+  overflow: hidden;
+}
 .portfolio p {
   margin-top: 18px;
-  max-width: 936px;
+  max-width: 940px;
+  max-height: 35px;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 30px;
+  overflow: hidden;
 }
 .portfolio .portfolio-content {
   margin: 11px 40px 0 40px;
-  padding-bottom: 68px;
+  padding-bottom: 65px;
 }
 .portfolio .portfolio-content .portfolio-gallery {
+  overflow: hidden;
   margin-top: 22px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -402,6 +411,15 @@ ul.social-elements li:hover {
   .services .wrapper .our-services {
     padding-top: 40px;
   }
+  .services .wrapper .our-services h2 {
+    max-width: 695px;
+    max-vheight: 40px;
+    overflow: hidden;
+  }
+  .services .wrapper .our-services p {
+    max-width: 695px;
+    max-height: 100px;
+  }
   .services .wrapper .services-content {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 52px 20px;
@@ -421,6 +439,7 @@ ul.social-elements li:hover {
   }
   .portfolio p {
     max-width: 695px;
+    max-height: 60px;
   }
   .portfolio .wrapper .portfolio-top {
     padding-top: 60px;
@@ -506,6 +525,15 @@ ul.social-elements li:hover {
     padding-top: 25px;
     margin-left: 33px;
   }
+  .services .wrapper .our-services h2 {
+    max-width: 315px;
+    max-vheight: 40px;
+    overflow: hidden;
+  }
+  .services .wrapper .our-services p {
+    max-width: 315px;
+    max-height: 215px;
+  }
   .services .wrapper .services-content {
     margin-top: 31px;
     margin-left: 33px;
@@ -518,7 +546,7 @@ ul.social-elements li:hover {
     grid-gap: 5px;
   }
   .services .wrapper p {
-    max-width: 314px;
+    max-width: 315px;
   }
 
   .portfolio {
@@ -527,6 +555,7 @@ ul.social-elements li:hover {
   }
   .portfolio p {
     max-width: 270px;
+    max-height: 100px;
   }
   .portfolio .wrapper .portfolio-top {
     margin-left: 30px;
@@ -572,6 +601,10 @@ ul.social-elements li:hover {
     margin-left: 20px;
     margin-right: 30px;
   }
+  .services .wrapper .services-content .service-info p {
+    max-height: 85px;
+  }
+
   .portfolio {
     border: none;
   }

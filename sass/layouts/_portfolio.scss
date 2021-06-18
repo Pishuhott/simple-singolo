@@ -9,20 +9,25 @@
         margin: 0 40px;
     }
     & h2 {
-
+        max-width: 940px;
+        max-height: 46px;
+        overflow: hidden;
     }
     & p {
         margin-top: 18px;
-        max-width: 936px;
+        max-width: 940px;
+        max-height: 35px;
         font-style: normal;
         font-weight: 300;
         font-size: 18px;
         line-height: 30px;
+        overflow: hidden;
     }
     .portfolio-content {
         margin: 11px 40px 0 40px;
-        padding-bottom: 68px;
+        padding-bottom: 65px;
         .portfolio-gallery {
+            overflow: hidden;
             & img {
                 max-width: 100%;
             }

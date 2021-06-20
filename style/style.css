@@ -258,7 +258,7 @@ a.navigation__link-active {
 }
 .services .wrapper .our-services h2 {
   max-width: 940px;
-  max-vheight: 40px;
+  max-height: 40px;
   overflow: hidden;
 }
 .services .wrapper .our-services p {
@@ -407,54 +407,62 @@ ul.social-elements li:hover {
   .slider .swiper-container {
     height: 447px;
   }
-
-  .services .wrapper .our-services {
-    padding-top: 40px;
+  .slider .swiper-container .swiper-elements {
+    left: -1px;
   }
-  .services .wrapper .our-services h2 {
-    max-width: 695px;
-    max-vheight: 40px;
-    overflow: hidden;
-  }
-  .services .wrapper .our-services p {
-    max-width: 695px;
-    max-height: 100px;
-  }
-  .services .wrapper .services-content {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 52px 20px;
-    margin-top: 37px;
-    padding-bottom: 67px;
-  }
-  .services .wrapper .services-content .service-info {
-    grid-template-columns: 1fr 4fr;
-    grid-gap: 17px;
-  }
-  .services .wrapper .services-content .service-info p {
-    margin-top: 8px;
-  }
-
-  .portfolio {
-    border-bottom: 7px solid #323746;
-  }
-  .portfolio p {
-    max-width: 695px;
-    max-height: 60px;
-  }
-  .portfolio .wrapper .portfolio-top {
-    padding-top: 60px;
-    margin-left: 42px;
-  }
-  .portfolio .wrapper .portfolio-content {
-    margin-top: 42px;
-    padding-bottom: 62px;
-  }
-  .portfolio .wrapper .portfolio-content .portfolio-gallery {
-    margin-top: 31px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 17px 19.6px;
+  .slider .swiper-container .swiper-button {
+    width: 92.5%;
+    top: 46.8%;
+    left: 4%;
   }
 }
+.services .wrapper .our-services {
+  padding-top: 40px;
+}
+.services .wrapper .our-services h2 {
+  max-width: 695px;
+  max-height: 40px;
+  overflow: hidden;
+}
+.services .wrapper .our-services p {
+  max-width: 695px;
+  max-height: 100px;
+}
+.services .wrapper .services-content {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 52px 20px;
+  margin-top: 37px;
+  padding-bottom: 67px;
+}
+.services .wrapper .services-content .service-info {
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 17px;
+}
+.services .wrapper .services-content .service-info p {
+  margin-top: 8px;
+}
+
+.portfolio {
+  border-bottom: 7px solid #323746;
+}
+.portfolio p {
+  max-width: 695px;
+  max-height: 60px;
+}
+.portfolio .wrapper .portfolio-top {
+  padding-top: 60px;
+  margin-left: 42px;
+}
+.portfolio .wrapper .portfolio-content {
+  margin-top: 42px;
+  padding-bottom: 62px;
+}
+.portfolio .wrapper .portfolio-content .portfolio-gallery {
+  margin-top: 31px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 17px 19.6px;
+}
+
 @media (max-width: 576px) {
   .header {
     max-height: 71px;
@@ -527,7 +535,7 @@ ul.social-elements li:hover {
   }
   .services .wrapper .our-services h2 {
     max-width: 315px;
-    max-vheight: 40px;
+    max-height: 40px;
     overflow: hidden;
   }
   .services .wrapper .our-services p {
@@ -551,7 +559,6 @@ ul.social-elements li:hover {
 
   .portfolio {
     border: none;
-    border: none;
   }
   .portfolio p {
     max-width: 270px;
@@ -560,7 +567,7 @@ ul.social-elements li:hover {
   .portfolio .wrapper .portfolio-top {
     margin-left: 30px;
     margin-right: 30px;
-    padding-top: 43px;
+    padding-top: 39px;
   }
   .portfolio .wrapper .portfolio-content {
     margin-left: 30px;
@@ -578,6 +585,7 @@ ul.social-elements li:hover {
   }
 
   footer .wrapper {
+    padding: 19px 42px 18px 40px;
     display: flex;
     justify-content: center;
   }

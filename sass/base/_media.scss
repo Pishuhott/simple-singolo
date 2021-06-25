@@ -1,11 +1,14 @@
 @media (max-width: $tablet-width) {
     .slider {
         border-bottom: 4px solid #EA676B;
+
         .swiper-container {
             height: 447px;
+
             .swiper-elements {
                 left: -1px;
             }
+
             .swiper-button {
                 width: 92.5%;
                 top: 46.8%;
@@ -13,12 +16,13 @@
             }
         }
     }
-}
+
 
     .services {
         & .wrapper {
             & .our-services {
                 padding-top: 40px;
+
                 & h2 {
                     max-width: 695px;
                     max-height: 40px;
@@ -75,7 +79,7 @@
 
         border-bottom: 7px solid #323746
     }
-
+}
 
 @media (max-width: 576px) {
     .header {

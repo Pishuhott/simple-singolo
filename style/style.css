@@ -328,18 +328,19 @@ a.navigation__link-active {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 17px 20px;
 }
-.portfolio .portfolio-content .portfolio-gallery img {
-  max-width: 100%;
-}
 .portfolio .portfolio-content .portfolio-gallery div {
   cursor: pointer;
 }
-.portfolio .portfolio-content .portfolio-gallery div:hover {
-  box-shadow: 0 0 5px 3px #648BF0;
-  transition: 0.3s;
-}
 .portfolio .portfolio-content .portfolio-gallery div:nth-child(1n+13) {
   display: none;
+}
+
+.portfolio-img {
+  max-width: 100%;
+}
+.portfolio-img:hover {
+  box-shadow: 0 0 5px 3px #648BF0;
+  transition: 0.3s;
 }
 
 ul.portfolio-tab-list li {
@@ -415,54 +416,54 @@ ul.social-elements li:hover {
     top: 46.8%;
     left: 4%;
   }
-}
-.services .wrapper .our-services {
-  padding-top: 40px;
-}
-.services .wrapper .our-services h2 {
-  max-width: 695px;
-  max-height: 40px;
-  overflow: hidden;
-}
-.services .wrapper .our-services p {
-  max-width: 695px;
-  max-height: 100px;
-}
-.services .wrapper .services-content {
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 52px 20px;
-  margin-top: 37px;
-  padding-bottom: 67px;
-}
-.services .wrapper .services-content .service-info {
-  grid-template-columns: 1fr 4fr;
-  grid-gap: 17px;
-}
-.services .wrapper .services-content .service-info p {
-  margin-top: 8px;
-}
 
-.portfolio {
-  border-bottom: 7px solid #323746;
-}
-.portfolio p {
-  max-width: 695px;
-  max-height: 60px;
-}
-.portfolio .wrapper .portfolio-top {
-  padding-top: 60px;
-  margin-left: 42px;
-}
-.portfolio .wrapper .portfolio-content {
-  margin-top: 42px;
-  padding-bottom: 62px;
-}
-.portfolio .wrapper .portfolio-content .portfolio-gallery {
-  margin-top: 31px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 17px 19.6px;
-}
+  .services .wrapper .our-services {
+    padding-top: 40px;
+  }
+  .services .wrapper .our-services h2 {
+    max-width: 695px;
+    max-height: 40px;
+    overflow: hidden;
+  }
+  .services .wrapper .our-services p {
+    max-width: 695px;
+    max-height: 100px;
+  }
+  .services .wrapper .services-content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 52px 20px;
+    margin-top: 37px;
+    padding-bottom: 67px;
+  }
+  .services .wrapper .services-content .service-info {
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 17px;
+  }
+  .services .wrapper .services-content .service-info p {
+    margin-top: 8px;
+  }
 
+  .portfolio {
+    border-bottom: 7px solid #323746;
+  }
+  .portfolio p {
+    max-width: 695px;
+    max-height: 60px;
+  }
+  .portfolio .wrapper .portfolio-top {
+    padding-top: 60px;
+    margin-left: 42px;
+  }
+  .portfolio .wrapper .portfolio-content {
+    margin-top: 42px;
+    padding-bottom: 62px;
+  }
+  .portfolio .wrapper .portfolio-content .portfolio-gallery {
+    margin-top: 31px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 17px 19.6px;
+  }
+}
 @media (max-width: 576px) {
   .header {
     max-height: 71px;

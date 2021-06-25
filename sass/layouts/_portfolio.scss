@@ -32,7 +32,7 @@
             margin-top: 22px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 17px 20px;
+            grid-gap: 12px 15px;
             & div {
                 cursor: pointer;
             }
@@ -42,7 +42,9 @@
         }
     }
 }
-
+.portfolio-gallery__image {
+    padding: 5px;
+}
 .portfolio-img {
     max-width: 100%;
     &:hover {

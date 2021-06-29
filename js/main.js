@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
-    ;
+
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
                 currentBtn.classList.add('active-tab');
             }
-            ;
+
             let wrapper = document.querySelector('.portfolio-gallery');
 
             let selectors = wrapper.children;
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             for (let i = 0; i < selectors.length; i++) {
                 wrapper.appendChild(selectors[i]);
             }
-            ;
+
         });
     });
 
@@ -88,11 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function shuffle(array) {
         array.sort(() => Math.random() - 0.5);
-    };
+    }
 
     //=====Slider======
     const images = document.querySelectorAll('.slide');
-    const swipeBts = document.querySelectorAll('.btn');
+    const swipeBts = document.querySelector('.swiper-button');
     let imagesArr = [];
 
     for (let i = 0; i < images.length; i++) {
@@ -103,17 +103,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let step = 0;
     let offset = 0;
     let width;
+    let height;
     let img;
+    let swipeBlock = false;
+
     function draw(pos) {
+
         img = document.createElement('img');
         width = document.querySelector('.swiper-container').offsetWidth
         img.src = imagesArr[step];
         img.classList.add('slide');
         img.style.left = offset * width + 'px';
-        img.style.width = width +'px';
+        img.style.width = width + 'px';
         img.style.height = 'auto';
 
-        if (pos == 'left') {
+        if (pos === 'left') {
             document.querySelector('.swiper-elements').appendChild(img)
         } else {
             document.querySelector('.swiper-elements').prepend(img)
@@ -126,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
             offset2++;
         })
 
-        if (step + 1 == images.length) {
+        if (step + 1 === images.length) {
             step = 0;
         } else {
             step++;
@@ -136,20 +140,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function imgResize() {
         let images2 = document.querySelectorAll('.slide');
+        let offset2 = 0;
         width = document.querySelector('.swiper-container').offsetWidth
+        height = document.querySelector('.swiper-elements img').offsetHeight
+        document.querySelector('.swiper-elements').style.width = width * images2.length + 'px'
         images2.forEach(img => {
-            img.style.width = width +'px';
+            img.style.width = width + 'px';
             img.style.height = 'auto';
+        })
+        document.querySelector('.swiper-elements').style.height =  height - 4 + 'px'
+        images2.forEach(img => {
+            img.style.left = offset2 * width - width + 'px';
+            offset2++;
         })
     }
 
     window.addEventListener('resize', imgResize)
 
-    function slider(imgId, pos) {
+    function swipe(imgId, pos) {
+        swipeBlock = true
         let images2 = document.querySelectorAll('.slide');
         let offset2 = 0;
         images2.forEach(img => {
-
             if (pos === 'left') {
                 img.style.left = offset2 * width - width + 'px';
                 offset2++;
@@ -158,21 +170,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 offset2--;
             }
         })
-        images2[imgId].remove();
+        images2[imgId].remove()
         draw(pos)
+        setTimeout(() => swipeBlock = false, 500)
     }
 
+    function chekSwipe(evt) {
+        if (!swipeBlock) {
+            if (evt.target.id === 'next') {
+                swipe(0, 'left')
+            } else if (evt.target.id === 'prev'){
+                swipe(2, 'right')
+            }
+        }
+
+    }
     draw('left'); draw('left'); draw('left');
 
-    swipeBts.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (btn.id === 'next') {
-                console.log('next');
-                slider(0, 'left')
-            } else {
-                console.log('prev');
-                slider(2, 'right')
-            }
-        })
-    })
+    swipeBts.addEventListener('click', chekSwipe)
 });

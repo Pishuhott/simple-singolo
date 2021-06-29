@@ -107,7 +107,6 @@ ul.navigation li {
 }
 .slider .swiper-container {
   max-width: 1020px;
-  height: 594px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -116,6 +115,7 @@ ul.navigation li {
   position: relative;
   top: 0;
   left: 0;
+  height: 594px;
 }
 .slider .swiper-container .swiper-elements .slide {
   position: absolute;
@@ -405,17 +405,15 @@ ul.social-elements li:hover {
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1019px) {
   .slider {
     border-bottom: 4px solid #EA676B;
   }
-  .slider .swiper-container {
+  .slider .swiper-elements {
+    left: -1px;
     height: 447px;
   }
-  .slider .swiper-container .swiper-elements {
-    left: -1px;
-  }
-  .slider .swiper-container .swiper-button {
+  .slider .swiper-button {
     width: 92.5%;
     top: 46.8%;
     left: 4%;
@@ -468,7 +466,7 @@ ul.social-elements li:hover {
     grid-gap: 17px 19.6px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .header {
     max-height: 71px;
     border: none;
@@ -497,43 +495,23 @@ ul.social-elements li:hover {
     display: block;
   }
 
-  .slider .swiper-container {
-    height: 335px;
-  }
-
-  .services {
-    border: none;
-  }
-  .services .wrapper .our-services {
-    padding-top: 40px;
-  }
-  .services .wrapper .services-content {
-    margin-top: 37px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px 20px;
-  }
-  .services .wrapper .services-content .service-info {
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 2px;
-  }
-}
-@media (max-width: 420px) {
-  .header.burger {
-    display: block;
-  }
-
   .slider {
     border: none;
   }
-  .slider .swiper-container {
+  .slider .swiper-elements {
     height: 221px;
   }
-  .slider .swiper-container .swiper-button {
+  .slider .swiper-elements .swiper-button {
     width: 95%;
     top: 44%;
     left: 3%;
   }
 
+  .services .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .services .wrapper .our-services {
     padding-top: 25px;
     margin-left: 33px;
@@ -569,6 +547,11 @@ ul.social-elements li:hover {
     max-width: 270px;
     max-height: 100px;
   }
+  .portfolio .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .portfolio .wrapper .portfolio-top {
     margin-left: 30px;
     margin-right: 30px;
@@ -579,6 +562,9 @@ ul.social-elements li:hover {
     margin-right: 30px;
     margin-top: 15px;
     padding-bottom: 41px;
+  }
+  .portfolio .wrapper .portfolio-content .portfolio-tab-list {
+    text-align: center;
   }
   .portfolio .wrapper .portfolio-content .portfolio-gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -603,7 +589,7 @@ ul.social-elements li:hover {
     height: 188px;
   }
 
-  .services .wrapper .swiper-container {
+  .services .wrapper .swiper-elements {
     height: 188px;
   }
   .services .wrapper .our-services {

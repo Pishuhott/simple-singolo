@@ -4,3 +4,5 @@
 [![DEMO](https://img.shields.io/badge/-DEMO-blue?style=flat)](https://pishuhott.github.io/simple-singolo/)
 
 **Description**
+My first job.
+Familiarization with the basics of HTML, CSS, JavaScript.

@@ -1,0 +1,78 @@
+.portfolio {
+    background-color: $color-background;
+    border-bottom: 6px solid #323746;
+    .wrapper {
+        background-color: $color-background;
+    }
+    .portfolio-top {
+        padding-top: 59px;
+        margin: 0 40px;
+    }
+    & h2 {
+        max-width: 940px;
+        max-height: 46px;
+        overflow: hidden;
+    }
+    & p {
+        margin-top: 18px;
+        max-width: 940px;
+        max-height: 35px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 30px;
+        overflow: hidden;
+    }
+    .portfolio-content {
+        margin: 11px 40px 0 40px;
+        padding-bottom: 65px;
+        .portfolio-gallery {
+            overflow: hidden;
+
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 12px 15px;
+            & div {
+                cursor: pointer;
+            }
+            & div:nth-child(1n +13) {
+                display: none;
+            }
+        }
+    }
+}
+.portfolio-gallery__image {
+    padding: 5px;
+}
+.portfolio-img {
+    max-width: 100%;
+    &:hover {
+        box-shadow: 0 0 5px 3px $color-primary2;
+        transition: 0.3s;
+    }
+}
+
+ul.portfolio-tab-list li {
+    cursor: pointer;
+    display: inline;
+    color: $color-text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 2px 6px;
+    margin-right: 8px;
+    height: 22px;
+    border: 1px solid $color-text;
+    border-radius: 5px;
+    &:hover {
+        color: white;
+        border: 1px solid white;
+    }
+    
+}
+.portfolio-tab-list .active-tab {
+    color: white ;
+    border: 1px solid white;
+}

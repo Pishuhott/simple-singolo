@@ -1,0 +1,21 @@
+.header {
+
+    position: relative;
+    height: 95px;
+    background-color: $color-header;
+    border-bottom: 6px solid #323746;
+}
+
+.header--fixed {
+    width: 100%;
+    position: fixed;
+    justify-content: center;
+    height: 95px;
+    border-bottom: 6px solid #323746;
+    z-index: 3;
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 29px;
+    }
+}

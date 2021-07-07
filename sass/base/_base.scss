@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    font-family: "Lato", Roboto, sans-serif;
+    list-style-type: none;
+    text-align: justify;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+h2 {
+    color: $color-heading;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+h3 {
+    color: $color-heading;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+p {
+    color: $color-text;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+
+a:link {
+    color:white;
+}
+a:visited{
+    color:white;
+}

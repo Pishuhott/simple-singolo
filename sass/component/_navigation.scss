@@ -1,0 +1,49 @@
+ul.navigation li {
+    display: inline;
+}
+
+.header--fixed {
+    background-color: $color-header;
+    .logo {
+        margin-left: 40px;
+        text-transform: uppercase;
+    }
+    nav {
+        margin-top: 12px;
+        justify-self: end;
+        margin-right: 30px;
+    }
+    .navigation {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        & li {
+            margin-left: 12px;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 39px;
+                padding: 1px;
+                background-color: white;
+                border-radius: 50%;
+            }
+            &:last-child:after {
+                display: none;
+            }
+            & a { 
+                margin-right: 10px;
+                margin-left: 2px;
+            }
+            & a:hover {
+                color: $color-primary;
+            }
+        }
+        a.navigation__link-active {
+            color: $color-primary;
+        }
+    }
+
+}
+.logo--colored {
+    color: $color-primary
+}

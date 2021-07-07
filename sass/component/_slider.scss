@@ -1,0 +1,44 @@
+.slider {
+    background-color: $color-primary;
+    border-bottom: 6px solid  #EA676B;
+    .swiper-container {
+        max-width: 1020px;
+
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        .swiper-elements {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 594px;
+            .slide {
+                position: absolute;
+                left: 0;
+                top: 0;
+                max-height: 600px;
+                transition: all .5s linear;
+            }
+
+        }
+        .swiper-button {
+            display: flex;
+            justify-content: space-between;
+            width: 92%;
+            height: 27px;
+            position: absolute;
+            top: 47.8%;
+            left: 4.4%;
+            .btn {
+                cursor: pointer;
+                width: 16px;
+                height: 27px;
+                background-position: 0 0 ;
+                background-size: cover;
+                & img:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            } 
+        }
+    }
+}
